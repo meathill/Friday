@@ -1,0 +1,23 @@
+{
+  "name": "meathill/friday",
+  "description": "A PHP API test runner, based on PHPUnit and Guzzle.",
+  "type": "library",
+  "require": {
+    "guzzlehttp/guzzle": "^6.2",
+    "phpunit/phpunit": "^5.5"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Meathill",
+      "email": "meathill@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Meathill\\": "src"
+    }
+  }
+}
