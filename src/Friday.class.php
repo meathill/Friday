@@ -154,6 +154,7 @@ class Friday extends PHPUnit_Framework_TestCase {
    * @return bool
    */
   protected function validateValue( $key, $value, array $define ) {
+    //todo:在统计数据里面经常最后会有一个id=amount的总计，这个amount不能满足id、date等格式要求 by woddy
     if (ArrayUtils::isSequentialArray($define)) {
       $check = $value === $define;
       $this->assertTrue($check, $this->createErrorMessage("字段 {$key} 的值必须是数组,内容必须是 " . json_encode($define)));
