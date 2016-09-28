@@ -160,6 +160,7 @@ class Friday extends PHPUnit_Framework_TestCase {
       $this->assertTrue($check, $this->createErrorMessage("字段 {$key} 的值必须是数组,内容必须是 " . json_encode($define)));
       return $check;
     }
+
     if (!is_string($define['type'])) {
       $check = $value === $define['type'];
       $this->assertTrue($check, $this->createErrorMessage("字段 {$key} 的值必须等于 {$define['type']}"));
