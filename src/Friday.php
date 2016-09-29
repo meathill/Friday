@@ -37,8 +37,9 @@ class Friday extends PHPUnit_Framework_TestCase {
   protected $session = [];
 
   protected function setUp() {
+    $url = defined('API_URL') ? API_URL : $this::$API_URL;
     $this->client = new Client([
-      'base_uri' => self::$API_URL,
+      'base_uri' => $url,
       'cookies' => true,
     ]);
     $this->client->request('GET', 'set_session.php', [
