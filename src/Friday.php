@@ -207,6 +207,7 @@ class Friday extends PHPUnit_Framework_TestCase {
           }
           if ( $define['item'] ) {
             foreach ( $value as $item ) {
+              $this->assertNotNull($item, $this->createErrorMessage("字段 {$key} 的元素中存在 Null"));
               $this->validateArray( $item, $define['item'] );
             }
           }
@@ -215,7 +216,7 @@ class Friday extends PHPUnit_Framework_TestCase {
 
       case 'object': // php里面没有对象,这里的 `object` 取自 JS 里的概念
         $check = is_array($value);
-        if (is_array($define) && $define['fields']) {
+        if ($check && is_array($define) && $define['fields']) {
           $this->validateArray($value, $define['fields']);
         }
         break;
